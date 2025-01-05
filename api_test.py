@@ -3,7 +3,9 @@ from pydantic import BaseModel
 
 # Initialize FastAPI app
 app = FastAPI()
-
+@app.get("/")
+def read_root():
+    return {"message": "Welcome to the FastAPI app!"}
 # Input model for multiplication request
 class MultiplyRequest(BaseModel):
     number1: float
